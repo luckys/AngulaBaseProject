@@ -1,0 +1,11 @@
+.user-Active {
+  color: green;
+}
+
+.user-Blocked {
+  color: yellow;
+}
+
+.user-Deleted {
+  color: red;
+}

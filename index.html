@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>edataconsulting test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <!-- iOS meta tags to show site on full size-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="assets/css/edata.css">
+  <link rel="stylesheet" href="assets/libs/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/angularjs-datepicker/dist/angular-datepicker.min.css">
+</head>
+
+<body ng-app="edata">
+  <!--[if lt IE 11]>
+            <p class="browserupgrade">edata requires Internet Explorer 11 (and higher). Please upgrade your browser.</p>
+        <![endif]-->
+  <div class="container" ng-view>
+  </div>
+
+  <script src="assets/libs/bower_components/angular/angular.js"></script>
+  <script src="assets/libs/bower_components/angular-route/angular-route.js"></script>
+  <script src="assets/libs/bower_components/angular-messages/angular-messages.js"></script>
+  <script src="assets/libs/bower_components/pouchdb/dist/pouchdb.js"></script>
+  <script src="assets/libs/bower_components/angular-pouchdb/angular-pouchdb.js"></script>
+  <script src="node_modules/angular-uuid/angular-uuid.js"></script>
+  <script src="assets/libs/bower_components/angular-md5/angular-md5.min.js"></script>
+  <script src="node_modules/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+
+  <script src="app/edata.module.js"></script>
+  <script src="app/edata.routes.js"></script>
+  <script src="app/start.controller.js"></script>
+
+  <script src="app/common/common.module.js"></script>
+  <script src="app/common/common.factory.js"></script>
+
+  <script src="app/user-manager/user-manager.module.js"></script>
+  <script src="app/user-manager/user-manager.routes.js"></script>
+  <script src="app/user-manager/user-manager.controller.js"></script>
+  <script src="app/user-manager/user-manager.service.js"></script>
+  <script src="app/user-manager/user-manager.factory.js"></script>
+
+</body>
+
+</html>

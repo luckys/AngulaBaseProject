@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>User List</h3>
+  </div>
+</div>
+<div class="row" ng-if="vm.users.length">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      {{ statusFilter }}
+      <div class="panel-body">
+        Filter by Status:
+        <label class="radio-inline">
+          <input type="radio" id="option-all" name="filterSelected" ng-model="vm.statusFilter" value="" checked> All
+        </label>
+        <label class="radio-inline" ng-repeat="status in vm.userStatus">
+          <input type="radio" id="option-{{ status }}" name="filterSelected" ng-model="vm.statusFilter" value="{{ status }}"> {{ status }}
+        </label>
+      </div>
+    </div>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Status Icon</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Status</th>
+        <th>Expire Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in vm.users | filter: {status: vm.statusFilter}">
+        <td><span class="glyphicon glyphicon-record user-{{user.status}}" aria-hidden="true"></span></td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.status }}</td>
+        <td>{{ user.expireDate | date:'dd/MM/yyyy' }}</td>
+        <td><a class="btn btn-default" role="button" ng-href="#/editUser/{{user._id}}" type="submit">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" ng-click="vm.sendUsersToApi()" type="submit">Send to Api</button>
+  <a class="btn btn-primary" role="button" ng-href="#/start">Back</a>
+  </div>
+</div>
+<div class="row" ng-if="!vm.users.length">
+  <div class="col-md-8 col-md-offset-2">
+    <h5>There are not users. Please insert it one</h5>
+  </div>
+</div>
